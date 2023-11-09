@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useSelector, useDispatch } from 'react-redux';
 import CartItems from './CartItems';
-import { clearCart } from '../features/cart/cartSlice';
+import { openModal } from '../features/modal/modalSlice';
 
 // eslint-disable-next-line consistent-return
 const CartContainer = () => {
@@ -32,11 +32,11 @@ const CartContainer = () => {
             Total
             <span>
               $
-              {total}
+              {total.toFixed(2)}
             </span>
           </h4>
         </div>
-        <button className="btn clear-btn" type="button" onClick={() => dispatch(clearCart())}>Clear</button>
+        <button className="btn clear-btn" type="button" onClick={() => dispatch(openModal())}>Clear</button>
       </footer>
     </section>
   );
